@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.css'
 
-function Container(){
+const Container =(props)=>{
     return(
         <h1>Container</h1>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.css'
 
-function Footer(){
+const Footer =(props)=>{
     return(
         <h1>Footer</h1>
     );

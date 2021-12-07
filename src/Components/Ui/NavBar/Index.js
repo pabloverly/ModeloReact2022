@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.css'
 
-function NavBar(){
+const NavBar =(props)=>{
     return(
         <h1>NavBar</h1>
     );

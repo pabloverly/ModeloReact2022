@@ -1,6 +1,7 @@
 import React from 'react';
+import './style.css'
 
-function Header(){
+const Header =(props)=>{
     return(
         <h1>Header</h1>
     );

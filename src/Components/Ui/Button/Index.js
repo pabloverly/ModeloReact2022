@@ -1,9 +1,12 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import './style.css'
 
-function Button(){
+const Buttons =(props)=>{
+
     return(
-        <h1>Button</h1>
+      <Button onClick={props.evento} variant="contained" className="button" >{props.name}</Button>
     );
 };
 
-export default Button;
+export default Buttons;
