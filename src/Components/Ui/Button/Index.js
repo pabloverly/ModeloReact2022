@@ -5,7 +5,7 @@ import './style.css'
 const Buttons =(props)=>{
 
     return(
-      <Button onClick={props.evento} variant="contained" className="button" >{props.name}</Button>
+      <Button onClick={props.onClick} variant="contained" className="button" >{props.name}</Button>
     );
 };
 
