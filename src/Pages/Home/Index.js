@@ -7,19 +7,29 @@ import { Container, Box, BoxTitle, BoxText } from "./Homestyles";
 // import './styles.css'
 
 const Home = () =>{
-    const [checked, setChecked] = React.useState(true); 
+    const [checked, setSwitch] = React.useState(true);      
     const [ckCheckbox, setCkCheckbox] = React.useState(true); 
     const [bgcolor, setBgcolor] = React.useState('white');
-    const [color, setColor] = React.useState('back');
-    const [valueInput,setValueInput] = useState();
+    const [color, setColor] = React.useState('back');  
 
+    const [checked2, setSwitch2] = React.useState(true);   
+    
+
+    const [valueInput,setValueInput] = useState();
+    const [valueInput2,setValueInput2] = useState();
     //EVENTO SWITCH
-    const handleChange = (event) => {
-      setChecked(event.target.checked);
+    const handleChangeSwitch1 = (event) => {
+      setSwitch(event.target.checked);
       setBgcolor(bgcolor === '#4696e5'?'white':'#4696e5');
       setColor(color === 'white'?'black':'white');    
     };
 
+    const handleChangeSwitch2 = (event) => {
+        setSwitch2(event.target.checked);
+        setBgcolor(bgcolor === 'red'?'white':'red');
+        setColor(color === 'white'?'black':'white');    
+      };
+  
     //EVENTO CHECKBOX
     const handleChange1 = (event) => {
         setCkCheckbox([event.target.checked, event.target.checked]);
@@ -45,7 +55,7 @@ const Home = () =>{
             <ButtonPage onClick={()=>{alert(valueInput)}} name="Enviar"/>           
             <Switch
                 checked={checked}
-                onChange={handleChange}
+                onChange={handleChangeSwitch1}
                 inputProps={{ 'aria-label': 'controlled' }}/>     
              <ButtonPage onClick={ Alert.A1} name="Validar"/>  
              <Checkbox
@@ -58,11 +68,11 @@ const Home = () =>{
                     <BoxTitle>Container</BoxTitle>           
                     <Divider />
                     
-                    <InputPage value={valueInput} onInput={e =>{setValueInput(e.target.value) }} label="Texto"/>
-                    <ButtonPage onClick={()=>{alert(valueInput)}} name="Enviar"/>           
+                    <InputPage value={valueInput2} onInput={e =>{setValueInput2(e.target.value) }} label="Texto"/>
+                    <ButtonPage onClick={()=>{alert(valueInput2)}} name="Enviar"/>           
                     <Switch
-                        checked={checked}
-                        onChange={handleChange}
+                        checked={checked2}
+                        onChange={handleChangeSwitch2}
                         inputProps={{ 'aria-label': 'controlled' }}
                     />     
                     <ButtonPage onClick={ Alert.A1} name="Validar"/>  
