@@ -4,7 +4,9 @@ import InputPage from '../../Components/Ui/Input/Index'
 import Alert from '../../Rules/Alerts/Alert'
 import { Switch, Checkbox, Divider } from '@mui/material';
 import { Container, Box, BoxTitle, BoxText } from "./Homestyles";
-// import './styles.css'
+import RefreshIcon from '@mui/icons-material/Refresh';
+import IconButton from '@mui/material/IconButton';
+//import './styles.css'
 
 const Home = () =>{
     const [checked, setSwitch] = React.useState(true);      
@@ -12,8 +14,7 @@ const Home = () =>{
     const [bgcolor, setBgcolor] = React.useState('white');
     const [color, setColor] = React.useState('back');  
 
-    const [checked2, setSwitch2] = React.useState(true);   
-    
+    const [checked2, setSwitch2] = React.useState(true);       
 
     const [valueInput,setValueInput] = useState();
     const [valueInput2,setValueInput2] = useState();
@@ -22,26 +23,29 @@ const Home = () =>{
       setSwitch(event.target.checked);
       setBgcolor(bgcolor === '#4696e5'?'white':'#4696e5');
       setColor(color === 'white'?'black':'white');    
-    };
-
+    };    
     const handleChangeSwitch2 = (event) => {
         setSwitch2(event.target.checked);
         setBgcolor(bgcolor === 'red'?'white':'red');
         setColor(color === 'white'?'black':'white');    
-      };
-  
+      };  
     //EVENTO CHECKBOX
     const handleChange1 = (event) => {
         setCkCheckbox([event.target.checked, event.target.checked]);
         setBgcolor(bgcolor === 'black'?'white':'black');
         setColor(color === 'white'?'black':'white'); 
       };
-
     React.useEffect(() => {           
              document.body.style.backgroundColor = bgcolor;
              document.body.style.color = color;                    
     }, [color,bgcolor]);
-
+ 
+    function refresh(){
+        document.location.reload()
+            // setTimeout(function(){
+            //     document.location.reload()
+            // },10000)
+    }  
     
  
     return(
@@ -62,6 +66,10 @@ const Home = () =>{
                  checked={ckCheckbox[0] && ckCheckbox[1]}
                  indeterminate={ckCheckbox[0] !== ckCheckbox[1]}
                  onChange={handleChange1} />
+
+            <IconButton color="secondary" aria-label="add an alarm" onClick={refresh}>
+            <RefreshIcon />
+            </IconButton>
 
             <Container >
                 <box>
